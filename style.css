@@ -28,7 +28,6 @@ li>div {
 }
 
 input, button {
-    background: #efeeee;
     border-radius: 9px;
     padding: 6px;
     font-size: 19px;
@@ -52,6 +51,7 @@ button {
 
 }
 .div2 > ul {
+     background: #efeeee;
     border-radius: 24px;
     padding: 34px;
     margin-bottom: 16px;
