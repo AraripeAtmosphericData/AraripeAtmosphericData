@@ -1,5 +1,5 @@
 
-
+const ulRelatorioHtml = document.getElementById("ulRelatorio")
 const temperaturaHtml = document.getElementById("1")
 const pressaoHtml = document.getElementById("2")
 const bateriaHtml = document.getElementById("3")
@@ -22,7 +22,7 @@ let dadoAnterior
 
 
 function comparar() {
-    
+        ulRelatorioHtml.style.backgroundColor = "#efeeee"
         let tempDif = dadosAtuais.temperatura - dadoAnterior.temperatura 
     
         if(dadoAnterior.temperatura < dadosAtuais.temperatura) {
@@ -31,12 +31,11 @@ function comparar() {
             tempHtml.innerHTML = "temperatura: "+ tempDif
         }
         let batteryDif = dadosAtuais.bateria - dadoAnterior.bateria
-        if(dadoAnterior.temperatura < dadosAtuais.temperatura) {
+        if(dadoAnterior.bateria < dadosAtuais.bateria) {
             batteryHtml.innerHTML = "bateria: +"+ batteryDif
         } else {
             batteryHtml.innerHTML = "temperatura: "+ batteryDif
         }
-        batteryHtml.innerHTML = `bateria: -${(dadoAnterior.bateria - dadosAtuais.bateria)}`
     
         let pressDif = dadosAtuais.pressao  - dadoAnterior.pressao 
         if(dadoAnterior.pressao < dadosAtuais.pressao) {
