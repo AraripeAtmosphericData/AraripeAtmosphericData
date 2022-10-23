@@ -28,6 +28,7 @@ li>div {
 }
 
 input, button {
+    background: #efeeee;
     border-radius: 9px;
     padding: 6px;
     font-size: 19px;
