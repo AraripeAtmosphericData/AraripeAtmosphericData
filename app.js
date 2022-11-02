@@ -50,7 +50,7 @@ function showGuide(mode) {
         btnInfo.style.width ="30vh"
         btnInfo.style.height ="36vh"
         btnInfo.addEventListener('transitionend', () => {
-            btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação, tente "13789", e clique em 'Iniciar Busca' para visualizar seus dados"
+            btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação e clique em 'Iniciar Busca' para visualizar seus dados"
           });
         } 
         if(mode == 2) {
@@ -58,7 +58,7 @@ function showGuide(mode) {
             btnInfo.style.width ="12vh"
             btnInfo.style.height ="20vh"
             btnInfo.addEventListener('transitionend', () => {
-                btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação, tente "13789", e clique em 'Iniciar Busca' para visualizar seus dados"
+                btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação e clique em 'Iniciar Busca' para visualizar seus dados"
               });
             } 
    
