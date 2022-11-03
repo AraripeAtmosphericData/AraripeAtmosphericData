@@ -102,3 +102,8 @@ p {
 .div-card > p {
     font-size:122%;
 } 
+.div-card > div > h3 {
+    margin: 0px;
+    font-size: 33px;
+    color: black;
+}  
