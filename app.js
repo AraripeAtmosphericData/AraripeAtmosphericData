@@ -120,13 +120,13 @@ function comparar() {
         if(dadoAnterior.temperatura < dadosAtuais.temperatura) {
             tempHtml.innerHTML = "Δ Temperatura: 🡡 "+ tempDif.toFixed(3)+" °C"
         } else {
-            tempHtml.innerHTML = "Δ Temperatura: 🡣"+ (tempDif.toFixed(3)*-1)+" °C"
+            tempHtml.innerHTML = "Δ Temperatura: 🡣"+ ((tempDif.toFixed(3))*-1)+" °C"
         }
         let batteryDif = dadosAtuais.bateria - dadoAnterior.bateria
         if(dadoAnterior.bateria < dadosAtuais.bateria) {
             batteryHtml.innerHTML = "Δ Bateria: 🡡 "+ batteryDif.toFixed(3)+"%"
         } else {
-            batteryHtml.innerHTML = "Δ Bateria: 🡣"+ (batteryDif.toFixed(3)*-1)+"%"
+            batteryHtml.innerHTML = "Δ Bateria: 🡣"+ ((batteryDif.toFixed(3))*-1)+"%"
         }
     
         let pressDif = dadosAtuais.pressao  - dadoAnterior.pressao 
@@ -139,19 +139,19 @@ function comparar() {
         if(dadoAnterior.altitude < dadosAtuais.altitude) {
             altHtml.innerHTML = "Δ Altitude: 🡡 "+altDif.toFixed(3)+" m"
         } else {
-            altHtml.innerHTML = "Δ Altitude: 🡣"(+altDif.toFixed(3)*-1)+" m"
+            altHtml.innerHTML = "Δ Altitude: 🡣"+((altDif.toFixed(3))*-1)+" m"
         }
         let vocDif = dadosAtuais.voc-dadoAnterior.voc
         if(dadoAnterior.altitude < dadosAtuais.altitude) {
             vocHtml.innerHTML = "Δ VOC: 🡡 "+vocDif.toFixed(3)+" ppm"
         } else {
-            vocHtml.innerHTML = "Δ VOC: 🡣"+(vocDif.toFixed(3)*-1)+" ppm"
+            vocHtml.innerHTML = "Δ VOC: 🡣"+((vocDif.toFixed(3))*-1)+" ppm"
         }
         let co2Dif = dadosAtuais.co2-dadoAnterior.co2
         if(dadoAnterior.co2 < dadosAtuais.co2) {
             co2Html.innerHTML = "Δ CO2: 🡡 "+co2Dif.toFixed(3)+" ppm"
         } else {
-            co2Html.innerHTML = "Δ CO2: 🡣"+(co2Dif.toFixed(3)*-1)+" ppm"
+            co2Html.innerHTML = "Δ CO2: 🡣"+((co2Dif.toFixed(3))*-1)+" ppm"
         }
         
             setTimeout(visibilidade(2),400)
