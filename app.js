@@ -118,40 +118,40 @@ function comparar() {
         let tempDif = dadosAtuais.temperatura - dadoAnterior.temperatura 
     
         if(dadoAnterior.temperatura < dadosAtuais.temperatura) {
-            tempHtml.innerHTML = "Temperatura: +"+ tempDif.toFixed(3)+" °C"
+            tempHtml.innerHTML = "Δ Temperatura: +"+ tempDif.toFixed(3)+" °C"
         } else {
-            tempHtml.innerHTML = "Temperatura: "+ tempDif.toFixed(3)+" °C"
+            tempHtml.innerHTML = "Δ Temperatura: "+ tempDif.toFixed(3)+" °C"
         }
         let batteryDif = dadosAtuais.bateria - dadoAnterior.bateria
         if(dadoAnterior.bateria < dadosAtuais.bateria) {
-            batteryHtml.innerHTML = "Bateria: +"+ batteryDif.toFixed(3)+"%"
+            batteryHtml.innerHTML = "Δ Bateria: +"+ batteryDif.toFixed(3)+"%"
         } else {
-            batteryHtml.innerHTML = "Bateria: "+ batteryDif.toFixed(3)+"%"
+            batteryHtml.innerHTML = "Δ Bateria: "+ batteryDif.toFixed(3)+"%"
         }
     
         let pressDif = dadosAtuais.pressao  - dadoAnterior.pressao 
         if(dadoAnterior.pressao < dadosAtuais.pressao) {
-            pressHtml.innerHTML = "Pressao: +"+pressDif.toFixed(3)+" Kpa"
+            pressHtml.innerHTML = "Δ Pressao: +"+pressDif.toFixed(3)+" Kpa"
         } else {
-            pressHtml.innerHTML = "Pressao: "+pressDif.toFixed(3)+" Kpa"
+            pressHtml.innerHTML = "Δ Pressao: "+pressDif.toFixed(3)+" Kpa"
         }
         let altDif =  dadosAtuais.altitude-dadoAnterior.altitude
         if(dadoAnterior.altitude < dadosAtuais.altitude) {
-            altHtml.innerHTML = "Altitude: +"+altDif.toFixed(3)+" m"
+            altHtml.innerHTML = "Δ Altitude: +"+altDif.toFixed(3)+" m"
         } else {
-            altHtml.innerHTML = "Altitude: "+altDif.toFixed(3)+" m"
+            altHtml.innerHTML = "Δ Altitude: "+altDif.toFixed(3)+" m"
         }
         let vocDif = dadosAtuais.voc-dadoAnterior.voc
         if(dadoAnterior.altitude < dadosAtuais.altitude) {
-            vocHtml.innerHTML = "VOC: +"+vocDif.toFixed(3)+" ppm"
+            vocHtml.innerHTML = "Δ VOC: +"+vocDif.toFixed(3)+" ppm"
         } else {
-            vocHtml.innerHTML = "VOC: "+vocDif.toFixed(3)+" ppm"
+            vocHtml.innerHTML = "Δ VOC: "+vocDif.toFixed(3)+" ppm"
         }
         let co2Dif = dadosAtuais.co2-dadoAnterior.co2
         if(dadoAnterior.co2 < dadosAtuais.co2) {
-            co2Html.innerHTML = "CO2: +"+co2Dif.toFixed(3)+" ppm"
+            co2Html.innerHTML = "Δ CO2: +"+co2Dif.toFixed(3)+" ppm"
         } else {
-            co2Html.innerHTML = "CO2: "+co2Dif.toFixed(3)+" ppm"
+            co2Html.innerHTML = "Δ CO2: "+co2Dif.toFixed(3)+" ppm"
         }
         
             setTimeout(visibilidade(2),400)
