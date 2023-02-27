@@ -1,21 +1,29 @@
 <html>
     <head>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="../styles/tool.css">
     </head>
     <body id="body">
-        <aside class="aside-back">
-            <a class="link1" href="https://araripeatmosphericaata.vercel.app/">
-                <img src="https://lh3.googleusercontent.com/pw/AL9nZEWofNQC90c_PYpd3HAk-Cm1kdC4p-BSNoRc4JhTzxaVAeWW9kGgCTXy0-xzBRUiZQ-KYgbDHr2cWMP1jOiJXDRR9obh5Fv0-3MSZ_8KfvX5lvisGc07I7kX-Z4tV_wegUnB0Tj0g_eQZAX098YGckrl=s64-no?authuser=0">
+        <aside class="aside-back-true">
+        </aside>
+        <aside id="bar" class="aside-back-false">
+            <a id="menu-a" class="link1" onclick="sideBar()">
+                <img src="../imgs/icons8-cardápio.svg"  >
             </a>
+            <ul id="menu-ul" style="display: none;margin-top: 2vh;" class="ul-menu-bar">
+                <li class="li-menu-bar"><a href="/"><img src="../imgs/icons8-voltar-48.png"> Voltar </a></li>
+            </ul>
         </aside>
         <div class="div3">
             <div class="div4">
-                <img class="logo" src="https://lh3.googleusercontent.com/pw/AL9nZEW3Vt4BLIv_QFEMmom-qzm3VtANd6lyuX82VUfn4E0mbgn_PpqyH0hMGu9BKHO-CXmfNRjxkVTuuKclqWkxRYmqk_cqQOkerBgrHiPvA6DvD9yaeu0NAjZKGUvIW4ImP1-U7AKcyGdYoSQ-EuN3x0RO=w437-h366-no?authuser=0">
-                <h1>Araripe Atmospheric Database</h1>
+                <img id="logo"class="logo" src="https://i.ibb.co/02XsTVk/0ff6ce0e-7ae4-4887-8750-1958fc99d3ba-removebg-preview.png">
+                <h1 id="title-h1">Araripe Atmospheric Database</h1>
             </div>
             <div class="div1">
                 <h1>Últimos Dados</h1>
-            <div>
+            <div style="    display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;">
 
         <ul>
             <li>
@@ -39,7 +47,8 @@
                 <div id="12"></div>
             </li>
         </ul>
-        <input onmouseenter="enterListener()"  type="number" id="input" placeholder="Código do sensor aqui!">
+        <input style="width: 70%;
+        margin: 0 15%;" onmouseenter="enterListener()"  type="number" id="input" placeholder="Código do sensor aqui!">
         <button class="btn-start" onclick="startLoop()">Iniciar Busca</button>
         <button class="btn-stop" onclick="stopSearch()">Parar</button>
     </div>
@@ -69,8 +78,8 @@
     </div>
 </div>
 <aside>
-    <button  id="btn-info" class="btn-info">Guia de Uso</button>
+    <button  id="btn-info" class="btn-info">Guia</button>
 </aside>
-        <script src="./app.js"></script>
+        <script src="../js/tool.js"></script>
     </body>
 </html>
