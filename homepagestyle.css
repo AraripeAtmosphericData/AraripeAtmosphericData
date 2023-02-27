@@ -7,7 +7,7 @@ body,button,ul,li,div,button,a{
 
 }
 body {
-    background-image: url(https://lh3.googleusercontent.com/pw/AL9nZEUeAChmu7EUJ2QpQQNS-zKfXD_ByzewkkwvQP3vDQYIzz6pcGK5IQRPXl9VY6OuVlC48fJ--sJCf3VVGQ5hGONZ-WNMejnP_qPNfKzFnMS8ily3Hm0HTRJmUZ1pnW2x9vjSOtv7yF2EqnvHkGZ08wMs=w938-h625-no?authuser=0);
+    background-image: url(https://i.ibb.co/RbhCKrK/image.jpg);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -65,16 +65,17 @@ button:hover,a:hover {
     background-color: rgba(0, 0, 0, 0.482);
 } 
 .link1 {
-    border-radius: 0px 8px 8px 0px;
+    border-radius: 0px 1vh 1vh 0px;
 }
 .link1:visited {
     text-decoration: underline;
 }
 .btn-home {
-    border-radius: 8px 0px 0px 8px;
+
+    border-radius: 1vh 0px 0px 1vh;
 }
 .div-home,.div-guide,.div-about {
-    border-radius: 8% 8% 8% 8%;
+    border-radius: 5vh;
     width: 65%;
     display: initial;
     background: #ffffff;
