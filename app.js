@@ -13,10 +13,17 @@ const altHtml = document.getElementById("7")
 const vocHtml = document.getElementById("9")
 const co2Html = document.getElementById("8")
 const btnInfo = document.getElementById("btn-info")
+const title = document.getElementById("title-h1")
+const logo = document.getElementById("logo")
+const bar = document.getElementById("bar")
+const menu = document.getElementById("menu-a")
+const menuUl = document.getElementById("menu-ul")
+const specifiedElement1 = bar
 const timeout = setTimeout(search, 6000)
 clearTimeout(timeout)
 let id
 let x
+let y = 0
 
 let dadosAtuais 
 let dadoAnterior 
@@ -32,8 +39,10 @@ if (screen.width <768) {
       btnInfo.addEventListener('mouseleave', () => {
         closeGuide(2)
       });
-    btnInfo.style.width ="9vh"
-    btnInfo.style.height ="6vh"
+    btnInfo.style.width ="7vh"
+    btnInfo.style.height ="5vh"
+    btnInfo.style.fontSize ="1.5vh"
+    btnInfo.style.borderRadius ="2vh"
 
 } else {
     btnInfo.addEventListener('mouseenter', () => {
@@ -42,21 +51,39 @@ if (screen.width <768) {
     btnInfo.addEventListener('mouseleave', () => {
         closeGuide(1)
     });
+    title.style.fontSize = "8vh"
+    title.style.width= "50%"
+    logo.style.width= "25%"
+    btnInfo.innerHTML = "Guia de Uso"
 }
-
+document.addEventListener("click", (event) => {
+    const isClickInside = specifiedElement1.contains(event.target);
+    if (isClickInside) {
+      
+    } else {
+        if( bar.style.animationName =="increase"){
+      bar.style.animationName ="decrease"
+      setTimeout(()=>{
+          menu.style.display ="flex"
+      },500)
+      menuUl.style.display ="none"
+        }
+    }
+})
 function showGuide(mode) {
     if(mode == 1) {
         btnInfo.innerHTML = ""
-        btnInfo.style.width ="30vh"
-        btnInfo.style.height ="36vh"
+        btnInfo.style.width ="70vh"
+        btnInfo.style.height ="20vh"
         btnInfo.addEventListener('transitionend', () => {
             btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação , '13789' por exemplo,  e clique em 'Iniciar Busca' para visualizar seus dados"
           });
         } 
         if(mode == 2) {
             btnInfo.innerHTML = ""
-            btnInfo.style.width ="12vh"
-            btnInfo.style.height ="20vh"
+            btnInfo.style.width ="45vh"
+            btnInfo.style.height ="18vh"
+            btnInfo.style.fontSize ="2vh"
             btnInfo.addEventListener('transitionend', () => {
                 btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação , '13789' por exemplo,  e clique em 'Iniciar Busca' para visualizar seus dados"
               });
@@ -64,21 +91,29 @@ function showGuide(mode) {
    
 
 }
+function sideBar() {
+        bar.style.animationName= "increase"
+        menu.style.display ="none"
+       setTimeout(()=>{
+        menuUl.style.display ="flex"
+        },500)
+}
 function closeGuide(mode) {
     if(mode == 1) {
     btnInfo.innerHTML = ""
     btnInfo.style.width ="26vh"
-    btnInfo.style.height ="12vh"
+    btnInfo.style.height ="6vh"
     btnInfo.addEventListener('transitionend', () => {
         btnInfo.innerHTML = "Guia de Uso"
       });
     } 
     if(mode == 2) {
         btnInfo.innerHTML = ""
-        btnInfo.style.width ="9vh"
+        btnInfo.style.width ="7vh"
         btnInfo.style.height ="5vh"
+        btnInfo.style.fontSize ="1.5vh"
         btnInfo.addEventListener('transitionend', () => {
-            btnInfo.innerHTML = "Guia de Uso"
+            btnInfo.innerHTML = "Guia"
           });
         } 
 }
@@ -188,7 +223,7 @@ function getData() {
     payloadVocHtml.innerHTML = "VOC's = " +data[0].payload.voc.toFixed(3)+" ppm"
     temperaturaHtml.innerHTML= "Temperatura = "+data[0].temperatura.toFixed(3)+" °C"
     pressaoHtml.innerHTML= "Pressao = "+(data[0].pressao/1000).toFixed(3)+" Kpa"
-    bateriaHtml.innerHTML= "Bateria= "+((data[0].bateria/2400)*100).toFixed(2)+"%"
+    bateriaHtml.innerHTML= "Bateria= "+((data[0].bateria/2600)*100).toFixed(2)+"%"
     if(id==undefined) {
         setTimeout(visibilidade(1),400)
     }
@@ -199,7 +234,7 @@ function getData() {
         voc:data[0].payload.voc.toFixed(3),
         co2:data[0].payload.co2.toFixed(3),
         altitude:data[0].payload.altitude.toFixed(3),
-        bateria:((data[0].bateria/2400)*100)
+        bateria:((data[0].bateria/2600)*100)
     }
     console.log(dadosAtuais)
     if(dadoAnterior != undefined) {
