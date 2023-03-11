@@ -13,6 +13,20 @@
 ::-webkit-scrollbar-thumb {
     background-color: #000000;
 }
+
+.loader {
+    border: 1vh solid #ffffff;
+    border-top: 1vh solid #00c2ff;
+    border-radius: 6vh;
+    width: 3vh;
+    height: 3vh;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 body,button,ul,li,div{
     font-family: Roboto;
     margin: 0px;
@@ -43,36 +57,12 @@ aside {
     align-content: center;
     align-items: flex-end;
 }
-@keyframes increase {
-    0% {
-        align-items: flex-start;
-        
-        width: 4vh;
-       height: 4%;
-    }
-    100% {
-        align-items: flex-start;
-        width: 20vh;
-        height: 15%;
-    }   
-}
-@keyframes decrease {
-    0% {
-        align-items: flex-start;
-        width: 20vh;
-        height: 15%;
-    }
-    100% {
-        width: 4vh;
-        height: 4%;
-        align-items: center;
-    }   
-}
 
 .aside-back-true {
     width: 15%;
 }
 .aside-back-false {
+    transition: height 0.5s ,width 0.5s;
     display: flex;
     background: white;
     height: 4%;
@@ -81,10 +71,6 @@ aside {
     width: 4vh;
     align-items: center;
     margin-top: 3vh;
-    
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-
 }  
 .div3 {
     height: fit-content;
@@ -192,7 +178,7 @@ button {
     width: 30%;
 }
 a {    
-    font-size: 2vh;
+    font-size: 1.6vh;
     font-weight: 500;
     display: flex;
     width: 100%;
@@ -201,25 +187,49 @@ a {
     text-decoration: none;
     color: black;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
 }
 a:hover {
     cursor: pointer;
     
 } 
 a>img {
-    width:2vh;
+    padding-right: 0.4vh;
+    width: 2vh;
 }
 
 .li-menu-bar {
+    margin-top: 1vh;
+    width: 100%;
     list-style: none;
-    border-radius: 1vh;
-    border-style: solid;
-    margin-left: 1.5vh;
+    border-bottom-style: solid;
     border-width: 0.1px;
-    padding: 0.3vh 4vh 0.3vh 1.5vh;
 }
 .li-menu-bar:hover {
     cursor: pointer;
     background: #00000021;
+}
+.ul-menu-bar {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.div-info {
+    height: 40vh;
+    overflow-y: scroll;
+}
+.div-code {
+    height: 10vh;
+    overflow-y: scroll;
+}
+h3 {
+    font-size: 2vh;
+    padding-left: 1vh;
+    margin: 0.5vh 0;
+}
+p {
+    font-size: 1.5vh;
+    padding-left: 1vh;
+    margin: 0 0 1vh 0;
 }
