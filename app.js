@@ -18,7 +18,14 @@ const logo = document.getElementById("logo")
 const bar = document.getElementById("bar")
 const menu = document.getElementById("menu-a")
 const menuUl = document.getElementById("menu-ul")
+const loader = document.getElementById("load")
+const btnStart = document.getElementById("btn1")
+const divInfo = document.getElementById("divInfo")
+const divCodes = document.getElementById("divCode")
 const specifiedElement1 = bar
+let  codigo
+let codigoAnterior
+let status
 const timeout = setTimeout(search, 6000)
 clearTimeout(timeout)
 let id
@@ -59,14 +66,15 @@ if (screen.width <768) {
 document.addEventListener("click", (event) => {
     const isClickInside = specifiedElement1.contains(event.target);
     if (isClickInside) {
-      
+      console.log("a")
     } else {
-        if( bar.style.animationName =="increase"){
-      bar.style.animationName ="decrease"
-      setTimeout(()=>{
-          menu.style.display ="flex"
-      },500)
-      menuUl.style.display ="none"
+        if( bar.style.width=="21vh" | bar.style.width=="30vh"){
+            divInfo.style.display = "none"
+            divCodes.style.display = "none"
+            menuUl.style.display ="none"
+            bar.style.height ="4%"
+            bar.style.width ="4vh"
+                menu.style.display ="flex"
         }
     }
 })
@@ -92,11 +100,32 @@ function showGuide(mode) {
 
 }
 function sideBar() {
-        bar.style.animationName= "increase"
+        bar.style.height= "14vh"
+        bar.style.width= "21vh"
         menu.style.display ="none"
-       setTimeout(()=>{
-        menuUl.style.display ="flex"
-        },500)
+        setTimeout(()=>{
+            menuUl.style.display ="flex"
+        },350)
+}
+function infoList() {
+    if(divInfo.style.display == "initial") {} else {
+    let height = parseFloat(bar.style.height)+40
+    bar.style.height= height+"vh"
+    bar.style.width= "30vh"
+    setTimeout(()=>{
+         divInfo.style.display = "initial"
+    },300)
+    }
+}
+function codeList() {
+    if(divCodes.style.display == "initial") {} else {
+    let height = parseFloat(bar.style.height)+12
+    bar.style.height= height+"vh"
+    bar.style.width= "30vh"
+    setTimeout(()=>{
+         divCodes.style.display = "initial"
+    },300)
+    }
 }
 function closeGuide(mode) {
     if(mode == 1) {
@@ -166,9 +195,9 @@ function comparar() {
     
         let pressDif = dadosAtuais.pressao  - dadoAnterior.pressao 
         if(dadoAnterior.pressao < dadosAtuais.pressao) {
-            pressHtml.innerHTML = "Δ Pressao:  "+pressDif.toFixed(3)+" Kpa"
+            pressHtml.innerHTML = "Δ Pressão:  "+pressDif.toFixed(3)+" Kpa"
         } else {
-            pressHtml.innerHTML = "Δ Pressao: "+pressDif.toFixed(3)+" Kpa"
+            pressHtml.innerHTML = "Δ Pressão: "+pressDif.toFixed(3)+" Kpa"
         }
         let altDif =  dadosAtuais.altitude-dadoAnterior.altitude
         if(dadoAnterior.altitude < dadosAtuais.altitude) {
@@ -178,9 +207,9 @@ function comparar() {
         }
         let vocDif = dadosAtuais.voc-dadoAnterior.voc
         if(dadoAnterior.altitude < dadosAtuais.altitude) {
-            vocHtml.innerHTML = "Δ VOC:  "+vocDif.toFixed(3)+" ppm"
+            vocHtml.innerHTML = "Δ VOC:  "+vocDif.toFixed(3)+" ppb"
         } else {
-            vocHtml.innerHTML = "Δ VOC: "+vocDif.toFixed(3)+" ppm"
+            vocHtml.innerHTML = "Δ VOC: "+vocDif.toFixed(3)+" ppb"
         }
         let co2Dif = dadosAtuais.co2-dadoAnterior.co2
         if(dadoAnterior.co2 < dadosAtuais.co2) {
@@ -193,7 +222,11 @@ function comparar() {
 }
 function search() {
     getData()
-    dadoAnterior = dadosAtuais
+    if(status == "on") {
+        dadoAnterior = dadosAtuais
+    } else {
+        console.log("off")
+    }
 
     if(keepGoing) {
         setTimeout(search, 6000);
@@ -201,19 +234,37 @@ function search() {
 }
 
 function startLoop() {
+    if (btnStart.disabled == false) {
     keepGoing = true;
+    btnStart.innerHTML = '<div id="load"  class=loader>'
+    codigo = inputHtml.value
+    btnStart.disabled = true
+    status = "on"
     search();
+    } else {
+        console.log("já funcionando")
+    }
 }
 
 function stopSearch() {
     keepGoing = false;
+    status = "off"
     clearTimeout(timeout)
+    dadoAnterior = undefined
+    dadoAtual = undefined
+    codigoAnterior = codigo
+    setTimeout(()=>{
+    btnStart.innerText = "Iniciar Busca"
+    btnStart.disabled = false},5000)
+    
 }
 function getData() {
     if (inputHtml.value == "") {
-            console.log("sem identificador")
+        console.log("sem identificador")
+        btnStart.innerText = "Iniciar Busca"
+        btnStart.disabled = false
     } else {
-        let link = (`https://api-project-smoky.vercel.app/getdata/${inputHtml.value}`).toString()
+        let link = (`https://api-project-smoky.vercel.app/getdata/${codigo}`).toString()
 
         fetch(link).then((response => response.json())).then( data =>{
         
@@ -243,7 +294,12 @@ function getData() {
                 console.log("dados =")
         } else {
             console.log("dados diferentes")
-            comparar()
+            if(codigo != codigoAnterior ) {
+                console.log("trocando código")
+                codigo == codigoAnterior
+            } else {
+                comparar()
+            }
         }
         },500);
     }
