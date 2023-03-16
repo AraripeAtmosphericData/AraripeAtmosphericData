@@ -1,132 +1,260 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body id="body">
-        <aside class="aside-back-true">
-        </aside>
-        <aside style="height: 4%; width: 4vh;" id="bar" class="aside-back-false">
-            <a style="justify-content: center;" id="menu-a" class="link1" onclick="sideBar()">
-                <img src="./icons8-cardápio.svg"  >
-            </a>
-            <ul id="menu-ul" style="display: none;" class="ul-menu-bar">
-                <li class="li-menu-bar"><a href="/"><img src="./icons8-voltar-48.png"> Voltar </a></li>
-                <li class="li-menu-bar" onclick="codeList()" ><a ><img src="./icons8-marcador-48.png" > Localidades </a></li>
-                <div id="divCode" style="display: none;" class="div-code">
-                <h3>13789</h3>
-                <p>Codigo de teste</p>
-                <h3>1300</h3>
-                <p>Codigo de utilizado para a coleta de dados na chapada</p>
-                <h3>1301</h3>
-                <p>Codigo de utilizado para a coleta de dados na chapada</p>
-                <h3>1302</h3>
-                <p>Codigo de utilizado para a coleta de dados no centro de Juazeiro do Norte</p>
-                </div>
-                <li class="li-menu-bar" onclick="infoList()" ><a ><img src="./icons8-informações.svg" > Informações Adicionais </a></li>
-                <div id="divInfo" class="div-info" style="display: none;">
-                    <h3>Pressão</h3>
-                    <p>O termo pressão é utilizado em diversos ramos da ciência como uma grandeza escalar que mensura a ação de uma ou mais forças sobre um determinado espaço, podendo este ser líquido, gasoso ou mesmo sólido. A pressão é uma propriedade intrínseca a qualquer sistema, e pode ser favorável ou desfavorável para o homem: a pressão que um gás ou vapor exerce sobre a pá de uma hélice, por exemplo, pode ser convertida em trabalho. Por outro lado, a pressão da água nas profundezas do oceano é um dos grandes desafios para os pesquisadores que buscam novas fontes de recursos naturais.</p>
-                    <a target="blank" style="    width: 74%;
-    height: 3vh;
-    padding: 1vh;
-    border-style: solid;
-    border-radius: 1vh;
-    margin-left: 6%;
-    border-width: 0.5px;
-                "  href="https://pt.wikipedia.org/wiki/Press%C3%A3o">Para saber mais informações sobre pressão clique aqui</a>
-                    <h3>Altitude</h3>
-                    <p></p>
-                    <h3>VOC's</h3>
-                    <p>Compostos orgânicos voláteis (COVS) são compostos orgânicos que possuem alta pressão de vapor sob condições normais a tal ponto de vaporizar significativamente e entrar na atmosfera. Uma grande variedade de moléculas a base de carbono, tais como aldeídos, cetonas, e outros hidrocarbonetos leves são COVS.O termo é frequentemente utilizado no contexto legal ou regulatório e em tais casos a definição precisa depende das leis. </p>
-                    <a target="blank" style="    width: 74%;
-    height: 3vh;
-    padding: 1vh;
-    border-style: solid;
-    border-radius: 1vh;
-    margin-left: 6%;
-    border-width: 0.5px;
-                "  href="https://pt.wikipedia.org/wiki/Composto_org%C3%A2nico_vol%C3%A1til">Para saber mais informações sobre VOC's clique aqui</a>
-                    <h3>Co²</h3>
-                    <p>Dióxido de carbono (fórmula química CO2) é um composto químico formado por moléculas, cada uma com um átomo de carbono ligado covalentemente a dois átomos de oxigênio. Encontra-se no estado gasoso à temperatura ambiente. No ar, o dióxido de carbono é transparente à luz visível, mas absorve a radiação infravermelha, agindo como um gás de efeito estufa. É um gás traço na atmosfera da Terra em 421 partes por milhão (ppm), ou cerca de 0,04% em volume (em maio de 2022), tendo subido dos níveis pré-industriais de 280 ppm. A queima de combustíveis fósseis é a principal causa dessas concentrações aumentadas de CO2 e também a principal causa da mudança climática.</p>
-                    <a target="blank" style="    width: 74%;
-    height: 3vh;
-    padding: 1vh;
-    border-style: solid;
-    border-radius: 1vh;
-    margin-left: 6%;
-    border-width: 0.5px;
-                "  href="https://pt.wikipedia.org/wiki/Di%C3%B3xido_de_carbono">Para saber mais informações sobre Co² clique aqui</a>
-                
-                </div>
-            </ul>
-        </aside>
-        <div class="div3">
-            <div class="div4">
-                <img id="logo"class="logo" src="https://i.ibb.co/02XsTVk/0ff6ce0e-7ae4-4887-8750-1958fc99d3ba-removebg-preview.png">
-                <h1 id="title-h1">Araripe Atmospheric Database</h1>
-            </div>
-            <div class="div1">
-                <h1>Últimos Dados</h1>
-            <div style="    display: flex;
+  <head>
+    <link rel="stylesheet" href="./tool.css" />
+  </head>
+  <body id="body">
+    <aside class="aside-back-true"></aside>
+    <aside
+      style="height: 4%; width: 4vh; z-index: 2"
+      id="bar"
+      class="aside-back-false"
+    >
+      <a
+        style="justify-content: center"
+        id="menu-a"
+        class="link1"
+        onclick="sideBar()"
+      >
+        <img src="./icons8-cardápio.svg" />
+      </a>
+      <ul id="menu-ul" style="display: none" class="ul-menu-bar">
+        <li class="li-menu-bar">
+          <a href="/"><img src="./icons8-voltar-48.png" /> Voltar </a>
+        </li>
+        <li class="li-menu-bar" onclick="codeList()">
+          <a><img src="./icons8-marcador-48.png" /> Localidades </a>
+        </li>
+        <div id="divCode" style="display: none" class="div-code">
+          <h3>13789</h3>
+          <p>Codigo de teste</p>
+          <h3>1300</h3>
+          <p>
+            Codigo de utilizado para a coleta de dados no interior da trilha
+            localizada na chapada do araripe
+          </p>
+          <h3>1301</h3>
+          <p>
+            Codigo de utilizado para a coleta de dados na entrada da reserva
+            localizada na chapada do araripe
+          </p>
+          <h3>1302</h3>
+          <p>
+            Codigo de utilizado para a coleta de dados no centro de Juazeiro do
+            Norte
+          </p>
+        </div>
+        <li class="li-menu-bar" onclick="infoList()">
+          <a
+            ><img src="./icons8-informações.svg" /> Informações Adicionais
+          </a>
+        </li>
+        <div id="divInfo" class="div-info" style="display: none">
+          <h3>Pressão</h3>
+          <p>
+            O termo pressão é utilizado em diversos ramos da ciência como uma
+            grandeza escalar que mensura a ação de uma ou mais forças sobre um
+            determinado espaço, podendo este ser líquido, gasoso ou mesmo
+            sólido. A pressão é uma propriedade intrínseca a qualquer sistema, e
+            pode ser favorável ou desfavorável para o homem: a pressão que um
+            gás ou vapor exerce sobre a pá de uma hélice, por exemplo, pode ser
+            convertida em trabalho. Por outro lado, a pressão da água nas
+            profundezas do oceano é um dos grandes desafios para os
+            pesquisadores que buscam novas fontes de recursos naturais.
+          </p>
+          <a
+            target="blank"
+            style="
+              width: 74%;
+              height: 3vh;
+              padding: 1vh;
+              border-style: solid;
+              border-radius: 1vh;
+              margin-left: 6%;
+              border-width: 0.5px;
+            "
+            href="https://pt.wikipedia.org/wiki/Press%C3%A3o"
+            >Para saber mais informações sobre pressão clique aqui</a
+          >
+          <h3>Altitude</h3>
+          <p></p>
+          <h3>VOC's</h3>
+          <p>
+            Compostos orgânicos voláteis (COVS) são compostos orgânicos que
+            possuem alta pressão de vapor sob condições normais a tal ponto de
+            vaporizar significativamente e entrar na atmosfera. Uma grande
+            variedade de moléculas a base de carbono, tais como aldeídos,
+            cetonas, e outros hidrocarbonetos leves são COVS.O termo é
+            frequentemente utilizado no contexto legal ou regulatório e em tais
+            casos a definição precisa depende das leis.
+          </p>
+          <a
+            target="blank"
+            style="
+              width: 74%;
+              height: 3vh;
+              padding: 1vh;
+              border-style: solid;
+              border-radius: 1vh;
+              margin-left: 6%;
+              border-width: 0.5px;
+            "
+            href="https://pt.wikipedia.org/wiki/Composto_org%C3%A2nico_vol%C3%A1til"
+            >Para saber mais informações sobre VOC's clique aqui</a
+          >
+          <h3>Co²</h3>
+          <p>
+            Dióxido de carbono (fórmula química CO2) é um composto químico
+            formado por moléculas, cada uma com um átomo de carbono ligado
+            covalentemente a dois átomos de oxigênio. Encontra-se no estado
+            gasoso à temperatura ambiente. No ar, o dióxido de carbono é
+            transparente à luz visível, mas absorve a radiação infravermelha,
+            agindo como um gás de efeito estufa. É um gás traço na atmosfera da
+            Terra em 421 partes por milhão (ppm), ou cerca de 0,04% em volume
+            (em maio de 2022), tendo subido dos níveis pré-industriais de 280
+            ppm. A queima de combustíveis fósseis é a principal causa dessas
+            concentrações aumentadas de CO2 e também a principal causa da
+            mudança climática.
+          </p>
+          <a
+            target="blank"
+            style="
+              width: 74%;
+              height: 3vh;
+              padding: 1vh;
+              border-style: solid;
+              border-radius: 1vh;
+              margin-left: 6%;
+              border-width: 0.5px;
+            "
+            href="https://pt.wikipedia.org/wiki/Di%C3%B3xido_de_carbono"
+            >Para saber mais informações sobre Co² clique aqui</a
+          >
+        </div>
+      </ul>
+    </aside>
+    <div class="div3">
+      <div class="div4">
+        <img
+          id="logo"
+          class="logo"
+          src="https://i.ibb.co/02XsTVk/0ff6ce0e-7ae4-4887-8750-1958fc99d3ba-removebg-preview.png"
+        />
+        <h1 id="title-h1">Araripe Atmospheric Database</h1>
+      </div>
+      <div class="div1">
+        <h1>Últimos Dados</h1>
+        <div
+          style="
+            display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: center;">
-
-        <ul>
+            justify-content: center;
+          "
+        >
+          <ul>
             <li>
-                <div id="1">
-                    Inicie uma Busca! 👇👇👇
-                </div>
+              <div id="1">Inicie uma Busca! 👇👇👇</div>
             </li>
             <li>
-                <div id="2"></div>
+              <div id="2"></div>
             </li>
             <li>
-                <div id="3"></div>
+              <div id="3"></div>
             </li>
             <li>
-                <div id="10"></div>
+              <div id="10"></div>
             </li>
             <li>
-                <div id="11"></div>
+              <div id="11"></div>
             </li>
             <li>
-                <div id="12"></div>
+              <div id="12"></div>
             </li>
-        </ul>
-        <input style="width: 70%;
-        margin: 0 15%;" onmouseenter="enterListener()"  type="number" id="input" placeholder="Código do sensor aqui!">
-        <button class="btn-start" id="btn1" onclick="startLoop()">Iniciar Busca </button>
-        <button class="btn-stop" onclick="stopSearch()">Parar</button>
-    </div>
-    </div>
-    <div class="div2">
+            <li>
+              <div id="13"></div>
+            </li>
+          </ul>
+          <input
+            style="width: 70%; margin: 0 15%"
+            onmouseenter="enterListener()"
+            type="number"
+            id="input"
+            placeholder="Código do sensor aqui!"
+          />
+          <button class="btn-start" id="btn1" onclick="startLoop()">
+            Iniciar Busca
+          </button>
+          <button class="btn-stop" onclick="stopSearch()">Parar</button>
+        </div>
+      </div>
+      <div class="div2">
         <h2>Relatório</h2>
         <ul id="ulRelatorio">
-            <li>
-                <div id="4">Esperando novos dados :/</div>
-            </li>
-            <li>
-                <div id="5"></div>
-            </li>
-            <li>
-                <div id="6"></div>
-            </li>
-            <li>
-                <div id="7"></div>
-            </li>
-            <li>
-                <div id="8"></div>
-            </li>
-            <li>
-                <div id="9"></div>
-            </li>
+          <li>
+            <div id="4">Esperando novos dados :/</div>
+          </li>
+          <li>
+            <div id="5"></div>
+          </li>
+          <li>
+            <div id="6"></div>
+          </li>
+          <li>
+            <div id="7"></div>
+          </li>
+          <li>
+            <div id="8"></div>
+          </li>
+          <li>
+            <div id="9"></div>
+          </li>
+          <li>
+            <div id="14"></div>
+          </li>
         </ul>
+      </div>
+      <div class="div5">
+        <div>
+          <div class="div-historico-header" id="headerHist">
+            <h2>Histórico</h2>
+            <input
+              id="codigo2"
+              class="btn-hist"
+              placeholder="Digite o código do sensor"
+            />
+            <input
+              id="diaHist"
+              type="number"
+              min="1"
+              max="31"
+              class="btn-hist"
+              placeholder="Selecione o dia"
+            />
+            <button onclick="criarHistorico(2)" id="btn-historico">
+              Buscar Histórico
+            </button>
+            <button onclick="limparHist()" id="btn-limpar-historico">
+              <img src="./icons8-reiniciar.svg" />Limpar Histórico
+            </button>
+          </div>
+          <div id="info-historico" style="display: none;align-items: center;
+          justify-content: flex-start;">
+            <h4 id="numero-historico">Numero de dados</h4>
+            <button  onclick="stopSearch()" class="btn-close-historico" id="btnStopHist">
+              <img style="width: 2vh;
+              margin-right: 0.5vh;" src="./icons8-cancelar.svg" /> Parar
+            </button>
+          </div>
+          <div id="div-historico-text">
+            Inicie uma Busca para ver o histórico ☝️☝️☝️
+          </div>
+          <div style="display: none" id="div-historico"></div>
+        </div>
+      </div>
     </div>
-</div>
-<aside>
-    <button  id="btn-info" class="btn-info">Guia</button>
-</aside>
-        <script src="./app.js"></script>
-    </body>
+    <aside>
+      <button id="btn-info" class="btn-info">Guia</button>
+    </aside>
+    <script src="./tool.js"></script>
+  </body>
 </html>
