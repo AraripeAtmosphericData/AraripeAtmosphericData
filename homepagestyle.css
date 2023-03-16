@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
 body,button,ul,li,div,button,a{
     font-family: Roboto;
     margin: 0px;
@@ -56,7 +69,7 @@ button,a {
     padding: 6px 32px;
     border-style: none;
     background-color: #22222265;
-    font-size: 2.1vh;
+    font-size: 1.9vh;
     text-decoration: none;
     margin: 0.5px;
 }
@@ -74,7 +87,7 @@ button:hover,a:hover {
 
     border-radius: 1vh 0px 0px 1vh;
 }
-.div-home,.div-guide,.div-about {
+.div-home,.div-guide,.div-about,.div-imgs {
     border-radius: 5vh;
     width: 65%;
     display: initial;
@@ -84,14 +97,14 @@ button:hover,a:hover {
 }
 
 p {
-    font-size: 200%;
+    font-size: 3vh;
     color: black;
     text-align: justify;
-    padding: 0px 28px;
+    padding: 0 3vh;
 }
 .div-card {
     display: flex;
-    padding: 0px 28px;
+    padding: 0 3vh;
     flex-direction: row;
     align-items: flex-start;
     margin-bottom: 3vh;
@@ -100,11 +113,23 @@ p {
     border-radius: 100%;
     width: 18%;
 }
-.div-card > p {
-    font-size:122%;
+.div-card >div > p {
+    font-size:2vh;
 } 
 .div-card > div > h3 {
+    padding-left: 2vh;
     margin: 0px;
-    font-size: 33px;
+    font-size: 3vh;
     color: black;
 }  
+.div-container-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.div-container-img > p {
+   font-size: 1.3vh;
+}
+.div-container-img > img {
+   width: 40vh;
+}
