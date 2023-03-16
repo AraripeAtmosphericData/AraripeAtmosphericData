@@ -1,78 +1,142 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="./homepagestyle.css">
-    </head>
-    <body>
-        <div class="div-img">
-        <img class="logo" src="https://i.ibb.co/02XsTVk/0ff6ce0e-7ae4-4887-8750-1958fc99d3ba-removebg-preview.png">
-        <h1>Araripe Atmospheric Database</h1>
-        </div>
-      <div>
-        <ul>
-            <li><button onclick="selectSection(1)" class="btn-home">Inicio</button></li>
-            <li ><button onclick="selectSection(2)" class="btn-about">Sobre</button></li>
-            <li><a href="/tool.html" class="link1">Acessar A²Data</a></li>
-        </ul>
-      </div>
-      <div style="display:none;" id="div-home" class="div-home">
-        <h2>INTRODUÇÃO
-        </h2>
-        <p id ="p1">Bem vindos ao A²Database - Araripe Atmospheric Database, um site destinado a
-             aquisição e exposição de dados atmosféricos da Chapada do Araripe.
-            A Floresta Nacional do Araripe-Apodi localizada na Chapada do Araripe, completou 70 anos
-             em 2016, sendo ela uma das primeiras áreas protegidas do Brasil e a primeira Floresta Nacional do 
-             país. Sua criação se deve ao fato de ser fundamental para a manutenção de espécies nativas, pela
-              necessidade de manter as fontes de água do semiárido e impedir o avanço da desertificação no Nordeste.
-               Nosso site objetiva, ajudar a preservar esta floresta, apresentando dados pontuais obtidos através de
-                um cubesat que monitore os principais responsáveis pelas mudanças climáticas e consequentemente a queima
-                 de combustiveis fósseis e de sua cobertura vegetal.
-        </p>
+  <head>
+    <link rel="stylesheet" href="./styles/home.css" />
+  </head>
+  <body>
+    <div class="div-img">
+      <img
+        class="logo"
+        src="https://i.ibb.co/02XsTVk/0ff6ce0e-7ae4-4887-8750-1958fc99d3ba-removebg-preview.png"
+      />
+      <h1>Araripe Atmospheric Database</h1>
     </div>
-    <div style="display:none;" id="div-about" class="div-about">
-        <h2>SOBRE NÓS</h2>
-        <p>A equipe que desenvolveu o projeto A²D é formada pelos estudantes 
-            de ensino médio técnico Natanael, Ludmila, Hugo e pelo Professor Rodrigo
-             Almeida, do Instituto Federal do Ceará - IFCE, campus Juazeiro do Norte.
-              O site foi submetido à 21ª  mostra de projetos da FEBRACE, onde teve o objetivo 
-              de enfatizar os problemas ambientais da nossa região.
-        </p>
-        <div class="div-card">
-            <img src="https://i.ibb.co/WkMLxHg/download.png">
-            <div>
-                <h3>Rodrigo Almeida</h3>
-            <p>Rodrigo Queiros de Almeida é doutor em Física e professor de Física do IFCE. Tem experiência em 
-                projetos de pesquisa, olimpíadas científicas, torneios de conhecimento e coordena o
-                 Comitê Olímpico Institucional do IFCE (COI- IFCE).</p>
-            </div>
+    <div>
+      <ul>
+        <li>
+          <button onclick="selectSection(1)" class="btn-home">Inicio</button>
+        </li>
+        <li>
+          <button onclick="selectSection(2)" class="btn-about">Sobre</button>
+        </li>
+        <li>
+          <button onclick="selectSection(3)" class="btn-about">
+            Imagens do Projeto
+          </button>
+        </li>
+        <li><a href="/a2data" class="link1">Acessar A²Data</a></li>
+      </ul>
+    </div>
+    <div style="display: none" id="div-home" class="div-home">
+      <h2>INTRODUÇÃO</h2>
+      <p id="p1">
+        Bem vindos ao A²Database - Araripe Atmospheric Database, um site
+        destinado a aquisição e exposição de dados atmosféricos da Chapada do
+        Araripe. A Floresta Nacional do Araripe-Apodi localizada na Chapada do
+        Araripe, completou 70 anos em 2016, sendo ela uma das primeiras áreas
+        protegidas do Brasil e a primeira Floresta Nacional do país. Sua criação
+        se deve ao fato de ser fundamental para a manutenção de espécies
+        nativas, pela necessidade de manter as fontes de água do semiárido e
+        impedir o avanço da desertificação no Nordeste. Nosso site objetiva,
+        ajudar a preservar esta floresta, apresentando dados pontuais obtidos
+        através de um cubesat que monitore os principais responsáveis pelas
+        mudanças climáticas e consequentemente a queima de combustiveis fósseis
+        e de sua cobertura vegetal.
+      </p>
+    </div>
+    <div style="display: none" id="div-about" class="div-about">
+      <h2>SOBRE NÓS</h2>
+      <p>
+        A equipe que desenvolveu o projeto A²D é formada pelos estudantes de
+        ensino médio técnico Natanael, Ludmila, Hugo e pelo Professor Rodrigo
+        Almeida, do Instituto Federal do Ceará - IFCE, campus Juazeiro do Norte.
+        O site foi submetido à 21ª mostra de projetos da FEBRACE, onde teve o
+        objetivo de enfatizar os problemas ambientais da nossa região.
+      </p>
+      <div class="div-card">
+        <img src="https://i.ibb.co/WkMLxHg/download.png" />
+        <div>
+          <h3>Rodrigo Almeida</h3>
+          <p>
+            Rodrigo Queiros de Almeida é doutor em Física e professor de Física
+            do IFCE. Tem experiência em projetos de pesquisa, olimpíadas
+            científicas, torneios de conhecimento e coordena o Comitê Olímpico
+            Institucional do IFCE (COI- IFCE).
+          </p>
         </div>
-        <div class="div-card">
-            <img src="https://i.ibb.co/ZSLrpBR/download.png">
-            <div>
-                <h3>Pedro Hugo Ursulino</h3>
-            <p>Pedro Hugo Ursulino Fernandes é aluno do 3° ano do curso técnico de eletrotécnica do IFCE - Campus Juazeiro do Norte. 
-                Estudou programação Frontend, como HTML5 e CSS,
-                e Backend, como Javascript e Node.js, com o auxílio de fóruns, sites e vídeos do Youtube.</p>
-            </div>
+      </div>
+      <div class="div-card">
+        <img src="https://i.ibb.co/ZSLrpBR/download.png" />
+        <div>
+          <h3>Pedro Hugo Ursulino</h3>
+          <p>
+            Pedro Hugo Ursulino Fernandes é ex-aluno do curso técnico de
+            eletrotécnica do IFCE - Campus Juazeiro do Norte. Estudou
+            programação Frontend, como HTML5 e CSS, e Backend, como Javascript e
+            Node.js, com o auxílio de fóruns, sites e vídeos do Youtube.
+          </p>
         </div>
-        <div class="div-card">
-            <img src="https://i.ibb.co/TWjJhtv/download.png">
-            <div>
-                <h3>Natanael Isidoro</h3>
-                <p>Natanael José Maciel Isidoro é aluno do 3° ano do curso técnico integrado em eletrotécnica do IFCE - 
-                Campus Juazeiro do Norte. É bolsista do Comitê Olímpico Institucional do IFCE, sendo medalhista nas mais
-                 diversas áreas.</p>
-            </div>
+      </div>
+      <div class="div-card">
+        <img src="https://i.ibb.co/TWjJhtv/download.png" />
+        <div>
+          <h3>Natanael Isidoro</h3>
+          <p>
+            Natanael José Maciel Isidoro é aluno do 3° ano do curso técnico
+            integrado em eletrotécnica do IFCE - Campus Juazeiro do Norte. É
+            bolsista do Comitê Olímpico Institucional do IFCE, sendo medalhista
+            nas mais diversas áreas.
+          </p>
         </div>
-        <div class="div-card">
-            <img src="https://i.ibb.co/7nfx90x/download.png">
-            <div>
-                <h3>Ludmila de Oliveira</h3>
-            <p>Ludmila de Oliveira Agra, aluna do 2° ano do curso técnico integrado em eletrotécnica do IFCE - 
-                Campus Juazeiro do Norte. Bolsista de Astronomia e Astrofísica e participante do Comitê Olímpico, ambos 
-                do Instituto IFCE e medalhista em olimpaidas voltadas as matérias de ciências.</p>
-            </div>
+      </div>
+      <div class="div-card">
+        <img src="https://i.ibb.co/7nfx90x/download.png" />
+        <div>
+          <h3>Ludmila de Oliveira</h3>
+          <p>
+            Ludmila de Oliveira Agra, aluna do 2° ano do curso técnico integrado
+            em eletrotécnica do IFCE - Campus Juazeiro do Norte. Bolsista de
+            Astronomia e Astrofísica e participante do Comitê Olímpico, ambos do
+            Instituto IFCE e medalhista em olimpaidas voltadas as matérias de
+            ciências.
+          </p>
         </div>
-            
-    <script src="./homepage.js"></script>
-    </body>
+      </div>
+    </div>
+    <div style="display: none" id="div-img" class="div-imgs">
+      <p>
+        Nessa seção você poderá acessar os principais registros fotográficos das
+        atividades de desenvolvimento do nosso projeto, onde podemos destacar os
+        experimentos realizados em laboratório para verificação dos sensores, as
+        medidas atmosféricas coletadas em campo e a criação dos códigos da
+        plataforma A2 Database
+      </p>
+
+      <div class="div-container-img">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFr9tomvRAmluFMD5Cp1PCVeEAzXKIOQeJEw&usqp=CAU"
+        />
+        <p>informação sobre a imagem acima</p>
+      </div>
+      <div class="div-container-img">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFr9tomvRAmluFMD5Cp1PCVeEAzXKIOQeJEw&usqp=CAU"
+        />
+        <p>informação sobre a imagem acima</p>
+      </div>
+      <div class="div-container-img">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFr9tomvRAmluFMD5Cp1PCVeEAzXKIOQeJEw&usqp=CAU"
+        />
+        <p>informação sobre a imagem acima</p>
+      </div>
+      <div class="div-container-img">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFr9tomvRAmluFMD5Cp1PCVeEAzXKIOQeJEw&usqp=CAU"
+        />
+        <p>informação sobre a imagem acima</p>
+      </div>
+    </div>
+
+    <script src="./js/home.js"></script>
+  </body>
 </html>
