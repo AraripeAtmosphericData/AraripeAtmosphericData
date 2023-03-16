@@ -34,7 +34,7 @@ const stopHist = document.getElementById("btnStopHist");
 const inputCodigo2 = document.getElementById("codigo2");
 const inputDia = document.getElementById("diaHist");
 const specifiedElement1 = bar;
-let historico;lo
+let historico;
 let codigo;
 let codigo2;
 let codigoAnterior;
