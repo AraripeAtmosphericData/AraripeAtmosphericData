@@ -2,6 +2,11 @@ const divHome = document.getElementById("div-home")
 const divImg = document.getElementById("div-img")
 const divAbout = document.getElementById("div-about")
 
+if (screen.width <= 300) {
+    //celular pequeno
+    paragrafoInicio.style.fontSize = "1.5vh"
+}
+
 setTimeout( selectSection(1) , 500)
 
 function selectSection(sectionId) {
