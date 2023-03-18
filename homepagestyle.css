@@ -88,12 +88,15 @@ button:hover,a:hover {
     border-radius: 1vh 0px 0px 1vh;
 }
 .div-home,.div-guide,.div-about,.div-imgs {
+    
     border-radius: 5vh;
     width: 65%;
     display: initial;
     background: #ffffff;
     padding: 0px 26px;
+    margin-bottom: 7vh;
     margin-top: 1vh;
+
 }
 
 p {
