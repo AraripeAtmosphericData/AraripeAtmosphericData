@@ -1,6 +1,7 @@
 const divHome = document.getElementById("div-home")
 const divImg = document.getElementById("div-img")
 const divAbout = document.getElementById("div-about")
+const paragrafoInicio = documento.getElementById("p1")
 
 if (screen.width <= 400) {
     //celular pequeno
