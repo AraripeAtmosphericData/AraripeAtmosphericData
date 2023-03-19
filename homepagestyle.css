@@ -60,16 +60,16 @@ body > div {
 }
 li{
     display: flex;
-    margin: 5vh 0px 12.5px 0px;
+    margin: 5vh 0px 2vh 0px;
     align-items: center;
 }
 button,a {
     font-weight: 500;
     color: white;
-    padding: 6px 32px;
+    padding: 1.3vh 1.5vh;
     border-style: none;
     background-color: #22222265;
-    font-size: 1.7vh;
+    font-size: 1.9vh;
     text-decoration: none;
     margin: 0.5px;
 }
@@ -88,15 +88,12 @@ button:hover,a:hover {
     border-radius: 1vh 0px 0px 1vh;
 }
 .div-home,.div-guide,.div-about,.div-imgs {
-    
     border-radius: 5vh;
-    width: 65%;
+    width: 80%;
     display: initial;
     background: #ffffff;
     padding: 0px 26px;
-    margin-bottom: 7vh;
     margin-top: 1vh;
-
 }
 
 p {
@@ -107,7 +104,7 @@ p {
 }
 .div-card {
     display: flex;
-    padding: 0 3vh;
+    padding: 0 10%;
     flex-direction: row;
     align-items: flex-start;
     margin-bottom: 3vh;
@@ -117,7 +114,7 @@ p {
     width: 18%;
 }
 .div-card >div > p {
-    font-size:2vh;
+    font-size:2.5vh;
 } 
 .div-card > div > h3 {
     padding-left: 2vh;
@@ -131,8 +128,8 @@ p {
     align-items: center;
 }
 .div-container-img > p {
-   font-size: 1.3vh;
+   font-size: 2vh;
 }
 .div-container-img > img {
-   width: 40vh;
+   width: 70%;
 }
