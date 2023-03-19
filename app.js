@@ -238,9 +238,9 @@ function comparar() {
     }
     let umDif = dadosAtuais.umidade - dadoAnterior.umidade;
     if (dadoAnterior.umidade < dadosAtuais.umidade) {
-      umidadeHtml2.innerHTML = "Δ CO2:  " + umDif.toFixed(3) + " %";
+      umidadeHtml2.innerHTML = "Δ Umidade:  " + umDif.toFixed(3) + " %";
     } else {
-      umidadeHtml2.innerHTML = "Δ CO2: " + umDif.toFixed(3) + " %";
+      umidadeHtml2.innerHTML = "Δ Umidade: " + umDif.toFixed(3) + " %";
     }
 
     setTimeout(visibilidade(2), 400);
