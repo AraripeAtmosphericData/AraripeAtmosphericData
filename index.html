@@ -2,7 +2,7 @@
   <head>
     <link rel="stylesheet" href="./homepagestyle.css" />
   </head>
-  <body>
+ <body>
     <div class="div-img">
       <img
         class="logo"
@@ -13,17 +13,17 @@
     <div>
       <ul>
         <li>
-          <button onclick="selectSection(1)" class="btn-home">Inicio</button>
+          <button onclick="selectSection(1)" id="b1" class="btn-home">Inicio</button>
         </li>
         <li>
-          <button onclick="selectSection(2)" class="btn-about">Sobre</button>
+          <button onclick="selectSection(2)"  id="b2" class="btn-about">Sobre</button>
         </li>
         <li>
-          <button onclick="selectSection(3)" class="btn-about">
+          <button onclick="selectSection(3)"  id="b3" class="btn-about">
             Imagens do Projeto
           </button>
         </li>
-        <li><a href="/a2data" class="link1">Acessar A²Data</a></li>
+        <li><a href="./tool.html"  id="b4" class="link1">Acessar A²Data</a></li>
       </ul>
     </div>
     <div style="display: none" id="div-home" class="div-home">
@@ -130,6 +130,7 @@
         <p>Dados sendo enviados por telemetria</p>
       </div>
     </div>
+
     <script src="./homepage.js"></script>
   </body>
 </html>
