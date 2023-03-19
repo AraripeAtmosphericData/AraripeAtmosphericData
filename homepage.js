@@ -11,9 +11,9 @@ const b4 = document.getElementById("b4")
 
 if (screen.width <= 320) {
     //celular pequeno
-    paragrafoInicio.style.fontSize = "1.4vh"
-    paragrafoSobre.style.fontSize = "1.4vh"
-    paragrafoImagens.style.fontSize = "1.4vh"
+    paragrafoInicio.style.fontSize = "1.2vh"
+    paragrafoSobre.style.fontSize = "1.2vh"
+    paragrafoImagens.style.fontSize = "1.2vh"
     b1.style.fontSize = "33px"
     b2.style.fontSize = "33px"
     b3.style.fontSize = "33px"
