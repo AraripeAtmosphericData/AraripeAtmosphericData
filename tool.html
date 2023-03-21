@@ -2,7 +2,7 @@
   <head>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body id="body">
+ <body id="body">
     <aside class="aside-back-true"></aside>
     <aside
       style="height: 4%; width: 4vh; z-index: 2"
@@ -15,14 +15,14 @@
         class="link1"
         onclick="sideBar()"
       >
-        <img src="./icons8-cardápio.svg" />
+        <img src="../imgs/icons8-cardápio.svg" />
       </a>
       <ul id="menu-ul" style="display: none" class="ul-menu-bar">
         <li class="li-menu-bar">
-          <a href="/"><img src="./icons8-voltar-48.png" /> Voltar </a>
+          <a href="/"><img src="../imgs/icons8-voltar-48.png" /> Voltar </a>
         </li>
         <li class="li-menu-bar" onclick="codeList()">
-          <a><img src="./icons8-marcador-48.png" /> Localidades </a>
+          <a><img src="../imgs/icons8-marcador-48.png" /> Localidades </a>
         </li>
         <div id="divCode" style="display: none" class="div-code">
           <h3>13789</h3>
@@ -45,7 +45,7 @@
         </div>
         <li class="li-menu-bar" onclick="infoList()">
           <a
-            ><img src="./icons8-informações.svg" /> Informações Adicionais
+            ><img src="../imgs/icons8-informações.svg" /> Informações Adicionais
           </a>
         </li>
         <div id="divInfo" class="div-info" style="display: none">
@@ -248,11 +248,26 @@ A fórmula usada para calcular a altitude é a seguinte: A = 44331,5 - 4946,62 P
               class="btn-hist"
               placeholder="Selecione o dia"
             />
+            <input
+              id="mesHist"
+              type="number"
+              min="1"
+              max="12"
+              class="btn-hist"
+              placeholder="Selecione o mes"
+            />
+            <input
+              id="anoHist"
+              type="number"
+              class="btn-hist"
+              value="2023"
+              placeholder="Selecione o ano"
+            />
             <button onclick="criarHistorico(2)" id="btn-historico">
               Buscar Histórico
             </button>
             <button onclick="limparHist()" id="btn-limpar-historico">
-              <img src="./icons8-reiniciar.svg" />Limpar Histórico
+              <img src="../imgs/icons8-reiniciar.svg" />Limpar Histórico
             </button>
           </div>
           <div id="info-historico" style="display: none;align-items: center;
@@ -260,7 +275,7 @@ A fórmula usada para calcular a altitude é a seguinte: A = 44331,5 - 4946,62 P
             <h4 id="numero-historico">Numero de dados</h4>
             <button  onclick="stopSearch()" class="btn-close-historico" id="btnStopHist">
               <img style="width: 2vh;
-              margin-right: 0.5vh;" src="./icons8-cancelar.svg" /> Parar
+              margin-right: 0.5vh;" src="../imgs/icons8-cancelar.svg" /> Parar
             </button>
           </div>
           <div id="div-historico-text">
