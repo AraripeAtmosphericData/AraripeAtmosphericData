@@ -33,6 +33,8 @@ const histHeader = document.getElementById("headerHist");
 const stopHist = document.getElementById("btnStopHist");
 const inputCodigo2 = document.getElementById("codigo2");
 const inputDia = document.getElementById("diaHist");
+const inputMes = document.getElementById("mesHist");
+const inputAno = document.getElementById("anoHist");
 const specifiedElement1 = bar;
 let historico;
 let codigo;
@@ -201,20 +203,20 @@ function comparar() {
     let tempDif = dadosAtuais.temperatura - dadoAnterior.temperatura;
 
     if (dadoAnterior.temperatura < dadosAtuais.temperatura) {
-      tempHtml.innerHTML = "Δ Temperatura:  " + tempDif.toFixed(3) + " °C";
+      tempHtml.innerHTML = "Δ Temperatura:  +" + tempDif.toFixed(2) + " °C";
     } else {
-      tempHtml.innerHTML = "Δ Temperatura: " + tempDif.toFixed(3) + " °C";
+      tempHtml.innerHTML = "Δ Temperatura: " + tempDif.toFixed(2) + " °C";
     }
     let batteryDif = dadosAtuais.bateria - dadoAnterior.bateria;
     if (dadoAnterior.bateria < dadosAtuais.bateria) {
-      batteryHtml.innerHTML = "Δ Bateria: + " + batteryDif.toFixed(3) + "%";
+      batteryHtml.innerHTML = "Δ Bateria: + " + batteryDif.toFixed(2) + "%";
     } else {
-      batteryHtml.innerHTML = "Δ Bateria: " + batteryDif.toFixed(3) + "%";
+      batteryHtml.innerHTML = "Δ Bateria: " + batteryDif.toFixed(2) + "%";
     }
 
     let pressDif = dadosAtuais.pressao - dadoAnterior.pressao;
     if (dadoAnterior.pressao < dadosAtuais.pressao) {
-      pressHtml.innerHTML = "Δ Pressão:  " + pressDif.toFixed(3) + " Kpa";
+      pressHtml.innerHTML = "Δ Pressão: + " + pressDif.toFixed(3) + " Kpa";
     } else {
       pressHtml.innerHTML = "Δ Pressão: " + pressDif.toFixed(3) + " Kpa";
     }
@@ -226,19 +228,19 @@ function comparar() {
     }
     let vocDif = dadosAtuais.voc - dadoAnterior.voc;
     if (dadoAnterior.altitude < dadosAtuais.altitude) {
-      vocHtml.innerHTML = "Δ VOC:  " + vocDif.toFixed(3) + " ppm";
+      vocHtml.innerHTML = "Δ VOC: + " + vocDif.toFixed(3) + " ppm";
     } else {
       vocHtml.innerHTML = "Δ VOC: " + vocDif.toFixed(3) + " ppm";
     }
     let co2Dif = dadosAtuais.co2 - dadoAnterior.co2;
     if (dadoAnterior.co2 < dadosAtuais.co2) {
-      co2Html.innerHTML = "Δ CO2:  " + co2Dif.toFixed(3) + " ppm";
+      co2Html.innerHTML = "Δ CO2: + " + co2Dif.toFixed(3) + " ppm";
     } else {
       co2Html.innerHTML = "Δ CO2: " + co2Dif.toFixed(3) + " ppm";
     }
     let umDif = dadosAtuais.umidade - dadoAnterior.umidade;
     if (dadoAnterior.umidade < dadosAtuais.umidade) {
-      umidadeHtml2.innerHTML = "Δ Umidade:  " + umDif.toFixed(3) + " %";
+      umidadeHtml2.innerHTML = "Δ Umidade:  +" + umDif.toFixed(3) + " %";
     } else {
       umidadeHtml2.innerHTML = "Δ Umidade: " + umDif.toFixed(3) + " %";
     }
@@ -332,7 +334,7 @@ function getData(mode) {
         pressaoHtml.innerHTML =
           "Pressao = " + (data[0].pressao / 1000).toFixed(3) + " Kpa";
         bateriaHtml.innerHTML =
-          "Bateria= " + ((data[0].bateria / 2600) * 100).toFixed(2) + "%";
+          "Bateria= " + ((data[0].bateria / 2600) * 100).toFixed(1) + "%";
         if (id == undefined) {
           setTimeout(visibilidade(1), 400);
         }
@@ -371,13 +373,13 @@ function getData(mode) {
   }
 }
 // usar enter para enviar
-// function enterListener() {
-//   window.addEventListener("keydown", (event) => {
-//     if (event.keyCode == 13) {
-//       startLoop();
-//     }
-//   });
-// }
+function enterListener() {
+  window.addEventListener("keydown", (event) => {
+    if (event.keyCode == 13) {
+      startLoop();
+    }
+  });
+}
 function criarHistorico(mode) {
   if (mode == 1) {
     let li = document.createElement("li");
@@ -427,8 +429,10 @@ function criarHistorico(mode) {
     } else {
       let codigoHist = inputCodigo2.value;
       let day = inputDia.value;
+      let month = (inputMes.value-1);
+      let year = inputAno.value;
       let link =
-        `https://api-teste-receber-json.vercel.app/getHistory/${codigoHist}/${day}`.toString();
+        `https://api-teste-receber-json.vercel.app/getHistory/${codigoHist}/${day}/${month}/${year}`.toString();
       fetch(link)
         .then((response) => response.json())
         .then((data) => {
