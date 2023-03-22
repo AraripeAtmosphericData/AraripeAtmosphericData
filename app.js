@@ -209,9 +209,9 @@ function comparar() {
     }
     let batteryDif = dadosAtuais.bateria - dadoAnterior.bateria;
     if (dadoAnterior.bateria < dadosAtuais.bateria) {
-      batteryHtml.innerHTML = "Δ Bateria: + " + batteryDif.toFixed(2) + "%";
+      batteryHtml.innerHTML = "Δ Bateria: + " + batteryDif.toFixed(0) + "%";
     } else {
-      batteryHtml.innerHTML = "Δ Bateria: " + batteryDif.toFixed(2) + "%";
+      batteryHtml.innerHTML = "Δ Bateria: " + batteryDif.toFixed(0) + "%";
     }
 
     let pressDif = dadosAtuais.pressao - dadoAnterior.pressao;
@@ -234,9 +234,9 @@ function comparar() {
     }
     let co2Dif = dadosAtuais.co2 - dadoAnterior.co2;
     if (dadoAnterior.co2 < dadosAtuais.co2) {
-      co2Html.innerHTML = "Δ CO2: + " + co2Dif.toFixed(3) + " ppm";
+      co2Html.innerHTML = "Δ CO2+ " + co2Dif.toFixed(3) + " ppm";
     } else {
-      co2Html.innerHTML = "Δ CO2: " + co2Dif.toFixed(3) + " ppm";
+      co2Html.innerHTML = "Δ CO2" + co2Dif.toFixed(3) + " ppm";
     }
     let umDif = dadosAtuais.umidade - dadoAnterior.umidade;
     if (dadoAnterior.umidade < dadosAtuais.umidade) {
@@ -263,7 +263,7 @@ function search() {
   }
 
   if (keepGoing) {
-    setTimeout(search, 6000);
+    setTimeout(search, 2000);
   }
 }
 
@@ -334,7 +334,7 @@ function getData(mode) {
         pressaoHtml.innerHTML =
           "Pressao = " + (data[0].pressao / 1000).toFixed(3) + " Kpa";
         bateriaHtml.innerHTML =
-          "Bateria= " + ((data[0].bateria / 2600) * 100).toFixed(1) + "%";
+          "Bateria= " + ((data[0].bateria / 2600) * 100).toFixed(0) + "%";
         if (id == undefined) {
           setTimeout(visibilidade(1), 400);
         }
@@ -402,7 +402,7 @@ function criarHistorico(mode) {
       dadosAtuais.voc +
       " ppm" +
       "<br>" +
-      "Co² =" +
+      "Co2 =" +
       dadosAtuais.co2 +
       " ppm" +
       "<br>" +
@@ -466,7 +466,7 @@ function criarHistorico(mode) {
                 historico[i].payload.voc +
                 " ppm" +
                 "<br>" +
-                "Co² =" +
+                "CO2 =" +
                 historico[i].payload.co2 +
                 " ppm" +
                 "<br>" +
