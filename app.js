@@ -402,7 +402,7 @@ function criarHistorico(mode) {
       dadosAtuais.voc +
       " ppm" +
       "<br>" +
-      "Co2 =" +
+      "CO2 =" +
       dadosAtuais.co2 +
       " ppm" +
       "<br>" +
